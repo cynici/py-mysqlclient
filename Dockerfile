@@ -1,4 +1,4 @@
-FROM trusty
+FROM ubuntu:trusty
 MAINTAINER Cheewai Lai <clai@csir.co.za>
 
 ARG GOSU_VERSION=1.10
