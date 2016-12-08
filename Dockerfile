@@ -12,7 +12,7 @@ RUN apt-get update \
  && pip install --upgrade pip \
  && ls -l /usr/local/bin/pip \
  && env \
- && /usr/local/bin/pip install --upgrade dateutils bottle \
+ && /usr/local/bin/pip install --upgrade dateutils bottle raven \
  && apt-get -y remove --purge build-essential \
  && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
