@@ -4,6 +4,10 @@ MAINTAINER Cheewai Lai <clai@csir.co.za>
 ARG GOSU_VERSION=1.10
 ARG DEBIAN_FRONTEND=noninteractive
 USER root
+
+#
+# Hardcoded to MySQL client 5.5 because newer releases are not compatible with pre-5.5 servers
+#
 RUN apt-get update \
  && apt-get -y install curl build-essential \
  && apt-get -y install python-setuptools python-pip python-mysqldb mysql-client-5.5 python-shapely python-bson \
