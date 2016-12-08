@@ -6,7 +6,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 USER root
 RUN apt-get update \
  && apt-get -y install curl build-essential \
- && apt-get -y install python-setuptools python-pip python-mysqldb mysql-client python-shapely python-bson \
+ && apt-get -y install python-setuptools python-pip python-mysqldb mysql-client-5.5 python-shapely python-bson \
  && curl -o /usr/local/bin/gosu -ksSL "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64" \
  && chmod +x /usr/local/bin/gosu \
  && pip install --upgrade pip \
