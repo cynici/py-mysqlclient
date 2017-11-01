@@ -1,8 +1,9 @@
 FROM ubuntu:trusty
-MAINTAINER Cheewai Lai <clai@csir.co.za>
+LABEL maintainer "Cheewai Lai <clai@csir.co.za>"
 
 ARG GOSU_VERSION=1.10
 ARG DEBIAN_FRONTEND=noninteractive
+ARG DOCKERIZE_VERSION=v0.5.0
 USER root
 
 #
@@ -17,6 +18,7 @@ RUN apt-get update \
  && ls -l /usr/local/bin/pip \
  && env \
  && /usr/local/bin/pip install --upgrade dateutils bottle raven \
+ && curl -k -fsSL https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz | tar xfz - -C /usr/bin \
  && apt-get -y remove --purge build-essential \
  && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
